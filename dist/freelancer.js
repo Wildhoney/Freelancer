@@ -132,7 +132,9 @@ class SharedFreelancer extends SharedWorker {
     }
 
 }
+
 exports.SharedFreelancer = SharedFreelancer;
+exports.default = Freelancer;
 
 /***/ })
 /******/ ]);

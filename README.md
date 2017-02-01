@@ -1,13 +1,12 @@
 ![Moggy](media/logo.png)
 
 > An implementation of on-the-fly defined WebWorkers that are created inline using data URIs, rather than separate physical files &mdash; for the benefit of all humanity.
-
-[![forthebadge](http://forthebadge.com/images/badges/compatibility-betamax.svg)](http://forthebadge.com)
-[![forthebadge](http://forthebadge.com/images/badges/built-with-love.svg)](http://forthebadge.com)
-
 > **npm:** `npm i freelancer --save`
 <br />
 > **Example:** [ESNextb.in](https://esnextb.in/?gist=26cda2d5ce0e508d367744b936200a58)
+
+[![forthebadge](http://forthebadge.com/images/badges/compatibility-betamax.svg)](http://forthebadge.com)
+[![forthebadge](http://forthebadge.com/images/badges/built-with-love.svg)](http://forthebadge.com)
 
 ## Getting Started
 
@@ -22,7 +21,8 @@ import { Freelancer } from 'freelancer';
 
 const worker = new Freelancer(() => {
    
-    self.addEventListener('message', () => {
+    self.addEventListener('message', event => {
+        console.log(event.data);
         self.postMessage('Pong!');
     });
     
@@ -45,7 +45,8 @@ const options = { send: 'Ping?', respond: 'Pong!' };
 
 const worker = new SharedFreelancer(options => {
    
-    self.addEventListener('message', () => {
+    self.addEventListener('message', event => {
+        console.log(event.data);
         self.postMessage(options.respond);
     });
     
