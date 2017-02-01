@@ -80,10 +80,10 @@ Object.defineProperty(exports, "__esModule", {
 /**
  * @method createBlob
  * @param {Function} fn
- * @param {Object} options
+ * @param {*} [options = undefined]
  * @return {String}
  */
-const createBlob = (fn, options) => {
+const createBlob = (fn, options = undefined) => {
 
     if (typeof fn !== 'function') {
 
@@ -104,12 +104,11 @@ class Freelancer extends Worker {
 
     /**
      * @constructor
-     * @param {Function} fn
-     * @param {Object} [options = {}]
+     * @param {Array} args
      * @return {Worker}
      */
-    constructor(fn, options = {}) {
-        return super(createBlob(fn, options));
+    constructor(...args) {
+        return super(createBlob(...args));
     }
 
 }
@@ -123,12 +122,11 @@ class SharedFreelancer extends SharedWorker {
 
     /**
      * @constructor
-     * @param {Function} fn
-     * @param {Object} [options = {}]
+     * @param {Array} args
      * @return {Worker}
      */
-    constructor(fn, options) {
-        return super(createBlob(fn, options));
+    constructor(...args) {
+        return super(createBlob(...args));
     }
 
 }
