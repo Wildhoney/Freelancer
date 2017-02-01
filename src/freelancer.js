@@ -1,7 +1,7 @@
 /**
  * @method createBlob
  * @param {Function} fn
- * @param {Object} options
+ * @param {*} options
  * @return {String}
  */
 const createBlob = (fn, options) => {
@@ -28,7 +28,7 @@ export class Freelancer extends Worker {
     /**
      * @constructor
      * @param {Function} fn
-     * @param {Object} [options = {}]
+     * @param {*} [options = null]
      * @return {Worker}
      */
     constructor(fn, options = {}) {
@@ -46,7 +46,7 @@ export class SharedFreelancer extends SharedWorker {
     /**
      * @constructor
      * @param {Function} fn
-     * @param {Object} [options = {}]
+     * @param {*} [options = null]
      * @return {Worker}
      */
     constructor(fn, options) {
