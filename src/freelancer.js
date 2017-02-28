@@ -1,9 +1,10 @@
 /**
  * @method createBlob
  * @param {Function} fn
+ * @param {Object} options
  * @return {String}
  */
-const createBlob = fn => {
+const createBlob = (fn, options = {}) => {
 
     if (typeof fn !== 'function') {
 
@@ -13,7 +14,7 @@ const createBlob = fn => {
     }
 
     // Transform the passed function into an IIFE and then create a blob URL from it.
-    const blob = new Blob([`(${fn.toString()})()`], { type: 'application/javascript' });
+    const blob = new Blob([`(${fn.toString()})(options)`], { type: 'application/javascript' });
     return URL.createObjectURL(blob);
 
 };
@@ -27,10 +28,11 @@ export class Freelancer extends Worker {
     /**
      * @constructor
      * @param {Function} fn
+     * @param {Object} options
      * @return {Worker}
      */
-    constructor(fn) {
-        return super(createBlob(fn));
+    constructor(fn, options) {
+        return super(createBlob(fn, options));
     }
 
 }
@@ -44,10 +46,11 @@ export class SharedFreelancer extends SharedWorker {
     /**
      * @constructor
      * @param {Function} fn
+     * @param {Object} options
      * @return {Worker}
      */
-    constructor(fn) {
-        return super(createBlob(fn));
+    constructor(fn, options) {
+        return super(createBlob(fn, options));
     }
 
 }

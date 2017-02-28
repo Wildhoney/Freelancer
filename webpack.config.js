@@ -4,9 +4,6 @@ module.exports = {
         filename: './dist/freelancer.js',
         libraryTarget: 'var'
     },
-    externals: {
-        leaflet: 'L'
-    },
     module: {
         loaders: [
             {
