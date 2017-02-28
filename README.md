@@ -1,4 +1,4 @@
-# Freelancer
+![Moggy](media/logo.png)
 
 > An implementation of on-the-fly defined WebWorkers that are created inline using data URIs, rather than separate physical files &mdash; for the benefit of all humanity.
 
