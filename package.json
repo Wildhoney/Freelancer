@@ -1,0 +1,27 @@
+{
+  "name": "freelancer",
+  "version": "0.1.0",
+  "description": "An implementation of on-the-fly defined WebWorkers that are created inline using data URIs, rather than physically separate files.",
+  "main": "dist/freelancer.js",
+  "scripts": {
+    "test": "ava"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Wildhoney/Freelancer.git"
+  },
+  "keywords": [
+    "webworker"
+    "webworker",
+    "webworkers",
+    "sharedworker",
+    "concurrency",
+    "concurrent"
+  ],
+  "author": "webworkers",
+  "license": "GPL-3.0",
+  "bugs": {
+    "url": "https://github.com/Wildhoney/Freelancer/issues"
+  },
+  "homepage": "https://github.com/Wildhoney/Freelancer#readme"
+}
