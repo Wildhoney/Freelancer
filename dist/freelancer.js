@@ -1,4 +1,4 @@
-var F =
+module.exports =
 /******/ (function(modules) { // webpackBootstrap
 /******/ 	// The module cache
 /******/ 	var installedModules = {};
@@ -88,7 +88,7 @@ const createBlob = (fn, options) => {
     if (typeof fn !== 'function') {
 
         // Ensure the passed parameter is actually a function.
-        throw 'Freelancer: Passed parameter must be a function.';
+        throw new Error('Freelancer: Passed parameter must be a function.');
     }
 
     // Transform the passed function into an IIFE and then create a blob URL from it.
