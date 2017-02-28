@@ -1,5 +1,4 @@
 import test from 'ava';
-import { spy } from 'sinon';
 import { Freelancer, SharedFreelancer } from '../src/freelancer';
 
 test('it should be able to invoke the Worker;', t => {

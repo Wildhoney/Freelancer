@@ -5,7 +5,9 @@
   "main": "dist/freelancer.js",
   "jsnext:main": "src/freelancer.js",
   "scripts": {
-    "test": "ava",
+    "spec": "ava",
+    "lint": "xo",
+    "test": "npm run lint && npm run spec",
     "build": "webpack"
   },
   "repository": {
@@ -29,11 +31,13 @@
   "devDependencies": {
     "ava": "^0.17.0",
     "babel-core": "^6.22.1",
+    "babel-eslint": "^7.1.1",
     "babel-loader": "^6.3.2",
     "babel-plugin-transform-es2015-modules-commonjs": "^6.22.0",
     "babel-register": "^6.22.0",
     "sinon": "^1.17.7",
-    "webpack": "^2.2.1"
+    "webpack": "^2.2.1",
+    "xo": "^0.17.1"
   },
   "ava": {
     "files": [
@@ -44,5 +48,29 @@
       "babel-register",
       "./tests/helpers/mock-workers.js"
     ]
+  },
+  "xo": {
+    "space": 4,
+    "parser": "babel-eslint",
+    "esnext": true,
+    "globals": [
+      "window",
+      "self",
+      "Blob",
+      "URL",
+      "Worker",
+      "SharedWorker"
+    ],
+    "rules": {
+      "padded-blocks": "off",
+      "constructor-super": "off",
+      "object-curly-spacing": [
+        2,
+        "always"
+      ],
+      "no-unused-expressions": "off",
+      "import/prefer-default-export": "off",
+      "no-duplicate-imports": "off"
+    }
   }
 }
