@@ -54,3 +54,5 @@ export class SharedFreelancer extends SharedWorker {
     }
 
 }
+
+export default Freelancer;
