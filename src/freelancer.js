@@ -18,7 +18,7 @@ const createBlob = fn => {
  * @class Freelancer
  * @extends Worker
  */
-class Freelancer extends Worker {
+export class Freelancer extends Worker {
 
     /**
      * @constructor
