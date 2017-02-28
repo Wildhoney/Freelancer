@@ -27,9 +27,22 @@
   },
   "homepage": "https://github.com/Wildhoney/Freelancer#readme",
   "devDependencies": {
+    "ava": "^0.17.0",
     "babel-core": "^6.22.1",
     "babel-loader": "^6.3.2",
     "babel-plugin-transform-es2015-modules-commonjs": "^6.22.0",
+    "babel-register": "^6.22.0",
+    "sinon": "^1.17.7",
     "webpack": "^2.2.1"
+  },
+  "ava": {
+    "files": [
+      "tests/*.test.js"
+    ],
+    "babel": "inherit",
+    "require": [
+      "babel-register",
+      "./tests/helpers/mock-workers.js"
+    ]
   }
 }
