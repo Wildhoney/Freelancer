@@ -5,6 +5,8 @@
 [![forthebadge](http://forthebadge.com/images/badges/compatibility-betamax.svg)](http://forthebadge.com)
 [![forthebadge](http://forthebadge.com/images/badges/built-with-love.svg)](http://forthebadge.com)
 
+**npm:** `npm i freelancer --save`
+
 ## Getting Started
 
 `Freelancer` uses the **same** interface as `Worker` except the passed parameters upon instantiation are *slightly* different.
@@ -24,8 +26,8 @@ const worker = new Freelancer(() => {
     
 });
 
-worker.postMessage('Ping?');
 worker.addEventListener('message', event => console.log(event.data));
+worker.postMessage('Ping?');
 ```
 
 It's worth bearing in mind that the worker is still a separate thread and thus the typical [rules of closures](https://developer.mozilla.org/en/docs/Web/JavaScript/Closures) no longer apply &ndash; any parameters you would like to be received by the worker would need to be sent using `postMessage` or by [passing parameters](#passing-parameters) upon instantiation.
@@ -47,6 +49,6 @@ const worker = new SharedFreelancer(options => {
     
 }, options);
 
-worker.postMessage(options.send);
 worker.addEventListener('message', event => console.log(event.data));
+worker.postMessage(options.send);
 ```
