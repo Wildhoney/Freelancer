@@ -3,6 +3,7 @@
   "version": "0.1.0",
   "description": "An implementation of on-the-fly defined WebWorkers that are created inline using data URIs, rather than physically separate files.",
   "main": "dist/freelancer.js",
+  "jsnext:main": "src/freelancer.js",
   "scripts": {
     "test": "ava",
     "build": "webpack"
