@@ -1,3 +1,4 @@
+var F =
 /******/ (function(modules) { // webpackBootstrap
 /******/ 	// The module cache
 /******/ 	var installedModules = {};
@@ -76,19 +77,13 @@
 Object.defineProperty(exports, "__esModule", {
     value: true
 });
-
-function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
-
-function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
-
-function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
-
 /**
  * @method createBlob
  * @param {Function} fn
+ * @param {Object} options
  * @return {String}
  */
-var createBlob = function createBlob(fn) {
+const createBlob = (fn, options) => {
 
     if (typeof fn !== 'function') {
 
@@ -97,7 +92,7 @@ var createBlob = function createBlob(fn) {
     }
 
     // Transform the passed function into an IIFE and then create a blob URL from it.
-    var blob = new Blob(['(' + fn.toString() + ')()'], { type: 'application/javascript' });
+    const blob = new Blob([`(${fn.toString()})(${JSON.stringify(options)})`], { type: 'application/javascript' });
     return URL.createObjectURL(blob);
 };
 
@@ -105,50 +100,39 @@ var createBlob = function createBlob(fn) {
  * @class Freelancer
  * @extends Worker
  */
-
-var Freelancer = exports.Freelancer = function (_Worker) {
-    _inherits(Freelancer, _Worker);
+class Freelancer extends Worker {
 
     /**
      * @constructor
      * @param {Function} fn
+     * @param {Object} [options = {}]
      * @return {Worker}
      */
-    function Freelancer(fn) {
-        var _this, _ret;
-
-        _classCallCheck(this, Freelancer);
-
-        return _ret = (_this = _possibleConstructorReturn(this, (Freelancer.__proto__ || Object.getPrototypeOf(Freelancer)).call(this, createBlob(fn))), _this), _possibleConstructorReturn(_this, _ret);
+    constructor(fn, options = {}) {
+        return super(createBlob(fn, options));
     }
 
-    return Freelancer;
-}(Worker);
+}
 
-/**
- * @class SharedFreelancer
- * @extends SharedWorker
- */
+exports.Freelancer = Freelancer; /**
+                                  * @class SharedFreelancer
+                                  * @extends SharedWorker
+                                  */
 
-
-var SharedFreelancer = exports.SharedFreelancer = function (_SharedWorker) {
-    _inherits(SharedFreelancer, _SharedWorker);
+class SharedFreelancer extends SharedWorker {
 
     /**
      * @constructor
      * @param {Function} fn
+     * @param {Object} [options = {}]
      * @return {Worker}
      */
-    function SharedFreelancer(fn) {
-        var _this2, _ret2;
-
-        _classCallCheck(this, SharedFreelancer);
-
-        return _ret2 = (_this2 = _possibleConstructorReturn(this, (SharedFreelancer.__proto__ || Object.getPrototypeOf(SharedFreelancer)).call(this, createBlob(fn))), _this2), _possibleConstructorReturn(_this2, _ret2);
+    constructor(fn, options) {
+        return super(createBlob(fn, options));
     }
 
-    return SharedFreelancer;
-}(SharedWorker);
+}
+exports.SharedFreelancer = SharedFreelancer;
 
 /***/ })
 /******/ ]);

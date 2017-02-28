@@ -2,6 +2,7 @@ module.exports = {
     entry: './src/freelancer.js',
     output: {
         filename: './dist/freelancer.js',
+        library: 'F',
         libraryTarget: 'var'
     },
     module: {
