@@ -7,7 +7,11 @@
 
 ## Getting Started
 
-`Freelancer` uses the **same** interface as `Worker` except the passed parameters upon instantiation are *slightly* different. Normally when invoking `new Worker` you pass the location of the file, whereas with `new Freelancer` you pass a function that contains the body of the worker &ndash; `Freelancer` also allows an *optional* second parameter to be passed that allows you to send additional parameters to the worker.
+`Freelancer` uses the **same** interface as `Worker` except the passed parameters upon instantiation are *slightly* different.
+
+Normally when invoking `new Worker` you pass the location of the file, whereas with `new Freelancer` you pass a function that contains the body of the worker.
+
+`Freelancer` also allows an *optional* [second parameter](#passing-parameters) to be passed that allows you to send additional options to the worker.
 
 ```javascript
 import { Freelancer } from 'freelancer';
@@ -21,20 +25,21 @@ const worker = new Freelancer(() => {
 });
 
 worker.postMessage('Ping?');
+worker.addEventListener('message', event => console.log(event.data));
 ```
 
-It's worth bearing in mind that the worker is still a separate thread and thus the typical [rules of closures](https://developer.mozilla.org/en/docs/Web/JavaScript/Closures) no longer apply &ndash; any parameters you would like to `postMessage` or [pass parameters](#passing-parameters) upon instantiation.
+It's worth bearing in mind that the worker is still a separate thread and thus the typical [rules of closures](https://developer.mozilla.org/en/docs/Web/JavaScript/Closures) no longer apply &ndash; any parameters you would like to be received by the worker would need to be sent using `postMessage` or by [passing parameters](#passing-parameters) upon instantiation.
 
 ## Passing Parameters
 
 Upon instantiation of `Freelancer` using the second parameter you can pass an object of options that will be pushed into the worker.
 
 ```javascript
-import { Freelancer } from 'freelancer';
+import { SharedFreelancer } from 'freelancer';
 
 const options = { send: 'Ping?', respond: 'Pong!' };
 
-const worker = new Freelancer(options => {
+const worker = new SharedFreelancer(options => {
    
     self.addEventListener('message', () => {
         self.postMessage(options.respond);
@@ -43,4 +48,5 @@ const worker = new Freelancer(options => {
 }, options);
 
 worker.postMessage(options.send);
+worker.addEventListener('message', event => console.log(event.data));
 ```
