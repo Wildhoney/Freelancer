@@ -6,6 +6,7 @@
 [![forthebadge](http://forthebadge.com/images/badges/built-with-love.svg)](http://forthebadge.com)
 
 > **npm:** `npm i freelancer --save`
+<br />
 > **Example:** [ESNextb.in](https://esnextb.in/?gist=26cda2d5ce0e508d367744b936200a58)
 
 ## Getting Started
