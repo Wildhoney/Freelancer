@@ -4,7 +4,8 @@
   "description": "An implementation of on-the-fly defined WebWorkers that are created inline using data URIs, rather than physically separate files.",
   "main": "dist/freelancer.js",
   "scripts": {
-    "test": "ava"
+    "test": "ava",
+    "build": "webpack"
   },
   "repository": {
     "type": "git",
@@ -18,14 +19,17 @@
     "concurrency",
     "concurrent"
   ],
-  "author": "webworkers",
+  "author": "Adam Timberlake <adam.timberlake@gmail.com>",
   "license": "GPL-3.0",
   "bugs": {
     "url": "https://github.com/Wildhoney/Freelancer/issues"
   },
   "homepage": "https://github.com/Wildhoney/Freelancer#readme",
   "devDependencies": {
+    "babel-core": "^6.22.1",
+    "babel-loader": "^6.3.2",
     "babel-preset-es2015": "^6.22.0",
-    "babel-preset-stage-3": "^6.22.0"
+    "babel-preset-stage-3": "^6.22.0",
+    "webpack": "^2.2.1"
   }
 }
