@@ -5,7 +5,7 @@
 [![forthebadge](http://forthebadge.com/images/badges/compatibility-betamax.svg)](http://forthebadge.com)
 [![forthebadge](http://forthebadge.com/images/badges/built-with-love.svg)](http://forthebadge.com)
 
-> **npm:** `npm i freelancer --save
+> **npm:** `npm i freelancer --save`
 
 ## Getting Started
 
