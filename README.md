@@ -6,6 +6,7 @@
 [![forthebadge](http://forthebadge.com/images/badges/built-with-love.svg)](http://forthebadge.com)
 
 > **npm:** `npm i freelancer --save`
+> **Example:** [ESNextb.in](https://esnextb.in/?gist=26cda2d5ce0e508d367744b936200a58)
 
 ## Getting Started
 
@@ -34,7 +35,7 @@ It's worth bearing in mind that the worker is still a separate thread and thus t
 
 ## Passing Parameters
 
-Upon instantiation of `Freelancer` using the second parameter you can pass an object of options that will be pushed into the worker.
+Upon instantiation of `Freelancer` using the second parameter you can pass options that will be pushed into the worker &ndash; passed options will be serialized using `JSON.stringify` and thus any data sent needs to be serializable.
 
 ```javascript
 import { SharedFreelancer } from 'freelancer';
