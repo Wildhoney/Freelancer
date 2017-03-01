@@ -1,7 +1,7 @@
 ![Moggy](media/logo.png)
 
 > An implementation of on-the-fly defined WebWorkers that are created inline using data URIs, rather than separate physical files &mdash; for the benefit of all humanity.<br /><br />
-> **npm:** `npm i freelancer --save`<br />
+> **npm:** `npm i freelancer --save`<br /><br />
 > **Example:** [ESNextb.in](https://esnextb.in/?gist=26cda2d5ce0e508d367744b936200a58)<br />
 > **Size:** ~500 bytes minified and gzipped
 
