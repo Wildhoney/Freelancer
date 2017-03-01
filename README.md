@@ -1,9 +1,9 @@
 ![Moggy](media/logo.png)
 
-> An implementation of on-the-fly defined WebWorkers that are created inline using data URIs, rather than separate physical files &mdash; for the benefit of all humanity.
-> **npm:** `npm i freelancer --save`
-<br />
-> **Example:** [ESNextb.in](https://esnextb.in/?gist=26cda2d5ce0e508d367744b936200a58)
+> An implementation of on-the-fly defined WebWorkers that are created inline using data URIs, rather than separate physical files &mdash; for the benefit of all humanity.<br />
+> **npm:** `npm i freelancer --save`<br />
+> **Example:** [ESNextb.in](https://esnextb.in/?gist=26cda2d5ce0e508d367744b936200a58)<br />
+> **Size:** ~500 bytes minified and gzipped
 
 [![forthebadge](http://forthebadge.com/images/badges/compatibility-betamax.svg)](http://forthebadge.com)
 [![forthebadge](http://forthebadge.com/images/badges/built-with-love.svg)](http://forthebadge.com)
