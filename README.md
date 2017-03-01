@@ -36,7 +36,7 @@ It's worth bearing in mind that the worker is still a separate thread and thus t
 
 ## Passing Parameters
 
-Upon instantiation of `Freelancer` using the second parameter you can pass options that will be pushed into the worker &ndash; passed options will be serialized using `JSON.stringify` and thus any data sent needs to be serializable.
+Upon instantiation of `Freelancer` you can use the second parameter to pass options that will be pushed to the worker &ndash; passed options will be serialized using `JSON.stringify` and thus any data sent needs to be serializable &ndash; which essentially means you're unable to pass by reference, and circular references will cause issues.
 
 ```javascript
 import { SharedFreelancer } from 'freelancer';
