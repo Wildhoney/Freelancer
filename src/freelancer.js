@@ -25,10 +25,46 @@ const createUrl = (fn, ...options) => {
 };
 
 /**
+ * @method createFallback
+ * @param {String} name
+ * @return {Object}
+ */
+const createFallback = name => {
+
+    return class {
+
+        /**
+         * @constructor
+         * @return {Object}
+         */
+        constructor() {
+
+            // Raise an error when a worker isn't supported.
+            throw new Error(`Freelancer: Unfortunately the ${name} is not supported by the current browser.`);
+
+        }
+
+    }
+
+};
+
+/**
+ * @constant WorkerExtend
+ * @type {Worker|Object}
+ */
+const WorkerExtend = window.Worker || createFallback('Worker');
+
+/**
+ * @constant SharedWorkerExtend
+ * @type {Worker|Object}
+ */
+const SharedWorkerExtend = window.SharedWorker || createFallback('SharedWorker');
+
+/**
  * @class Freelancer
  * @extends Worker
  */
-export class Freelancer extends Worker {
+export class Freelancer extends WorkerExtend {
 
     /**
      * @constructor
@@ -45,7 +81,7 @@ export class Freelancer extends Worker {
  * @class SharedFreelancer
  * @extends SharedWorker
  */
-export class SharedFreelancer extends SharedWorker {
+export class SharedFreelancer extends SharedWorkerExtend {
 
     /**
      * @constructor
