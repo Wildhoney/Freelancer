@@ -1,10 +1,10 @@
 /**
- * @method createBlob
+ * @method createUrl
  * @param {Function} fn
  * @param {*} [options = undefined]
  * @return {String}
  */
-const createBlob = (fn, options = undefined) => {
+const createUrl = (fn, options = undefined) => {
 
     if (typeof fn !== 'function') {
 
@@ -31,7 +31,7 @@ export class Freelancer extends Worker {
      * @return {Worker}
      */
     constructor(...args) {
-        return super(createBlob(...args));
+        return super(createUrl(...args));
     }
 
 }
@@ -48,7 +48,7 @@ export class SharedFreelancer extends SharedWorker {
      * @return {Worker}
      */
     constructor(...args) {
-        return super(createBlob(...args));
+        return super(createUrl(...args));
     }
 
 }
