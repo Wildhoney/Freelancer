@@ -44,7 +44,7 @@ const createFallback = name => {
 
         }
 
-    }
+    };
 
 };
 
@@ -52,13 +52,13 @@ const createFallback = name => {
  * @constant WorkerExtend
  * @type {Worker|Object}
  */
-const WorkerExtend = window.Worker || createFallback('Worker');
+const WorkerExtend = global.Worker || createFallback('Worker');
 
 /**
  * @constant SharedWorkerExtend
  * @type {Worker|Object}
  */
-const SharedWorkerExtend = window.SharedWorker || createFallback('SharedWorker');
+const SharedWorkerExtend = global.SharedWorker || createFallback('SharedWorker');
 
 /**
  * @class Freelancer
