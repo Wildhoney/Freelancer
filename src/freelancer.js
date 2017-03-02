@@ -14,7 +14,7 @@ const createUrl = (fn, ...options) => {
     }
 
     // Map each of the passed options through the JSON stringify process.
-    const params = options.map(option => JSON.stringify(option));
+    const params = options.map(JSON.stringify);
 
     // Transform the passed function into an IIFE and then create a blob.
     const blob = new Blob([`(${fn.toString()})(${params})`], { type: 'application/javascript' });
