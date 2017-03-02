@@ -1,4 +1,4 @@
-var F =
+module.exports =
 /******/ (function(modules) { // webpackBootstrap
 /******/ 	// The module cache
 /******/ 	var installedModules = {};
@@ -112,12 +112,12 @@ const createFallback = name => {
 
     /**
      * @constructor
-     * @return {NullWorker}
+     * @return {Object}
      */
     constructor() {
 
       // Raise an error when a worker isn't supported.
-      throw new Error(`Freelancer: Unfortunately ${name} is not supported by the current browser.`);
+      throw new Error(`Freelancer: Unfortunately the ${name} is not supported by the current browser.`);
     }
 
   };
@@ -125,13 +125,13 @@ const createFallback = name => {
 
 /**
  * @constant WorkerExtend
- * @type {Worker|NullWorker}
+ * @type {Worker|Object}
  */
 const WorkerExtend = window.Worker || createFallback('Worker');
 
 /**
  * @constant SharedWorkerExtend
- * @type {Worker|NullWorker}
+ * @type {Worker|Object}
  */
 const SharedWorkerExtend = window.SharedWorker || createFallback('SharedWorker');
 
