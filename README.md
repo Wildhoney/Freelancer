@@ -54,3 +54,5 @@ const worker = new SharedFreelancer(options => {
 worker.addEventListener('message', event => console.log(event.data));
 worker.postMessage(options.send);
 ```
+
+Although we refer to it as the *second parameter* you are in fact able to pass an infinite amount of parameters to the worker &ndash; the only requirement is that the first parameter is the worker's function.
