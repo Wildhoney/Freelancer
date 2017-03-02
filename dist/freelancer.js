@@ -95,7 +95,7 @@ const createUrl = (fn, ...options) => {
     const params = options.map(option => JSON.stringify(option));
 
     // Transform the passed function into an IIFE and then create a blob.
-    const blob = new Blob([`(${fn.toString()})(...[${params}])`], { type: 'application/javascript' });
+    const blob = new Blob([`(${fn.toString()})(${params})`], { type: 'application/javascript' });
 
     // Create a URL from the aforementioned blob that handles the worker logic.
     return URL.createObjectURL(blob);
