@@ -1,6 +1,10 @@
 language: node_js
-
-node_js:
-  - stable
-
+node_js: stable
 sudo: false
+deploy:
+  provider: heroku
+  api_key:
+    secure: DHn6EqdqCcKZ2C8Yc451VE3lNzJqqKuNZYO1Hh3S2DnujkNjtMyu4uqugCe3D2tbDuI1Rldj7kT0ZvAVtNa0E4ANDoTdoPVQpxzcelJlmO+oLfBz+7Bt5W2SEr3rE9pUfw72XN22ath2encotmrh0EjM+be2ZvDrRuXJZ07pBO9UGwTzsaatTh20kHEVbUVq0xzZk0PLtPVRjTwpj3IbRXu+uFXC6mGCts+FDJfu7nIYqU+62AxSBG188tbnPEAdNdcx4Q/AZnuxer5d9b0oOPQyH3WZikZtZSPRDfvlGNYEqbXIw2bLBeKqC96zCCJeu8qzQVRCS74bLWUdE4aXCiC+oDo7ejdh4lQHW+gwdcJy6srs55eCa5RsvjQBX/2/hQuXWyZNo/GQSb0ITp7XfQroHS28Hxdk4cl6b05ZzwucOGPcpb5VJKGeYj6PjGT4t0DCoQM17L8ESGVwp67JuaEGaU5uM6iBeZ8QknJzB8VY3RmOm9JL14GUEJxBjp1GV0ziuDA/uddLYTrVSxFS+xj2jNFMHhf/fEy2y8AFWHEdM5Eu/drR9SUQpITDUlH54fKSNOPOsdsEjfKmZDncZpvi8Z0DpGnC2hVx5tIEfRQ2sJAI6mYtvvTaq09EpU2aV6rUBwtWb9nmgOcX9ZY9brsRmiW+StY+cCu1CaakPIg=
+  app: freelancer-app
+  on:
+    repo: Wildhoney/Freelancer
