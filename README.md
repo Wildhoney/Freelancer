@@ -4,8 +4,11 @@
 > An implementation of on-the-fly defined WebWorkers that are created inline using data URIs, rather than separate physical files &mdash; for the benefit of all humanity.<br /><br />
 > **example:** [esnextb.in](https://esnextb.in/?gist=26cda2d5ce0e508d367744b936200a58) &nbsp;&nbsp;&bull;&nbsp;&nbsp; ~500 bytes gzipped.
 
-[![forthebadge](http://forthebadge.com/images/badges/compatibility-betamax.svg)](http://forthebadge.com)
-[![forthebadge](http://forthebadge.com/images/badges/built-with-love.svg)](http://forthebadge.com)
+![Travis](http://img.shields.io/travis/Wildhoney/Freelancer.svg?style=flat-square)
+&nbsp;
+![npm](http://img.shields.io/npm/v/freelancer.svg?style=flat-square)
+&nbsp;
+![License MIT](http://img.shields.io/badge/license-gpl3-lightgrey.svg?style=flat-square)
 
 ## Getting Started
 
@@ -56,3 +59,5 @@ worker.postMessage(options.send);
 ```
 
 Although we refer to it as the *second parameter* you are in fact able to pass an infinite amount of parameters to the worker &ndash; the only requirement is that the first parameter is the worker's function.
+
+[![forthebadge](http://forthebadge.com/images/badges/built-with-love.svg)](http://forthebadge.com)
