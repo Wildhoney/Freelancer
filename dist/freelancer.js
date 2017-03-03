@@ -157,12 +157,6 @@ const createFallback = name => {
 const WorkerExtend = global.Worker || createFallback('Worker');
 
 /**
- * @constant SharedWorkerExtend
- * @type {Worker|Object}
- */
-const SharedWorkerExtend = global.SharedWorker || createFallback('SharedWorker');
-
-/**
  * @class Freelancer
  * @extends Worker
  */
@@ -180,10 +174,16 @@ class Freelancer extends WorkerExtend {
 }
 
 exports.Freelancer = Freelancer; /**
-                                  * @class SharedFreelancer
-                                  * @extends SharedWorker
+                                  * @constant SharedWorkerExtend
+                                  * @type {SharedWorker|Object}
                                   */
 
+const SharedWorkerExtend = global.SharedWorker || createFallback('SharedWorker');
+
+/**
+ * @class SharedFreelancer
+ * @extends SharedWorker
+ */
 class SharedFreelancer extends SharedWorkerExtend {
 
   /**
