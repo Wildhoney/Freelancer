@@ -8,7 +8,9 @@
     "spec": "ava",
     "lint": "xo",
     "test": "npm run lint && npm run spec",
-    "build": "webpack"
+    "build": "webpack",
+    "create": "mkdir -p example/images && webpack --config example/webpack.config.js && babel example/tools/autocrop.js | node",
+    "start": "npm run create && babel example/server/default.js | node"
   },
   "repository": {
     "type": "git",
@@ -30,11 +32,16 @@
   "homepage": "https://github.com/Wildhoney/Freelancer#readme",
   "devDependencies": {
     "ava": "^0.17.0",
+    "babel-cli": "^6.22.2",
     "babel-core": "^6.22.1",
     "babel-eslint": "^7.1.1",
     "babel-loader": "^6.3.2",
     "babel-plugin-transform-es2015-modules-commonjs": "^6.22.0",
     "babel-register": "^6.22.0",
+    "compression": "^1.6.2",
+    "express": "^4.14.0",
+    "jimp": "^0.2.27",
+    "opener": "^1.4.2",
     "sinon": "^1.17.7",
     "webpack": "^2.2.1",
     "xo": "^0.17.1"
