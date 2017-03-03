@@ -1,16 +1,3 @@
 import { read } from 'jimp';
 
-/**
- * @method autocrop
- * @param {String} path
- * @return {Promise.<void>}
- */
-const autocrop = async path => {
-
-    const handle = await read(path);
-    handle.autocrop();
-    handle.write('example/images/logo.png');
-
-};
-
-autocrop('media/logo.png');
+read('media/logo.png').then(handle => handle.autocrop().write('example/images/logo.png'));
