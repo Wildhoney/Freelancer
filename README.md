@@ -66,22 +66,19 @@ When defining a worker inline you'll lose the ability to `import` because the de
 
 ```javascript
 import { Freelancer } from 'freelancer';
+import translate from './translator';
 
-const options = { send: 'Ping?', respond: 'Pong!' };
-
-const worker = new Freelancer(async options => {
+const worker = new Freelancer(async () => {
    
     const translate = await import('./translator');
     
     self.addEventListener('message', event => {
-        console.log(event.data);
         self.postMessage(translate(options.respond));
     });
     
-}, options);
+});
 
-worker.addEventListener('message', event => console.log(event.data));
-worker.postMessage(options.send);
+worker.postMessage(translate(options.send));
 ```
 
 ## Unsupported Worker
