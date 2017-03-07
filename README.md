@@ -60,10 +60,6 @@ worker.postMessage(options.send);
 
 Although we refer to it as the *second parameter* you are in fact able to pass an infinite amount of parameters to the worker &ndash; the only requirement is that the first parameter is the worker's function.
 
-## Unsupported Worker
-
-In some cases `SharedWorker` &mdash; or to a lesser extent `Worker` &mdash; may be `undefined` due to a lack of browser support ([see issue](https://github.com/Wildhoney/Freelancer/issues/2)). When a worker is unsupported you'll receive an error message, and thus it's crucial to [determine browser support](http://caniuse.com/#feat=sharedworkers) before using a particular worker.
-
 ## Dynamic Imports
 
 When defining a worker inline you'll lose the ability to `import` because the declaration needs to be at the top-level &ndash; instead you should prefer [dynamic `import`s](https://github.com/tc39/proposal-dynamic-import) using `async` functions or a simple `Promise.then`.
@@ -86,5 +82,10 @@ const worker = new Freelancer(async options => {
 
 worker.addEventListener('message', event => console.log(event.data));
 worker.postMessage(options.send);
+```
+
+## Unsupported Worker
+
+In some cases `SharedWorker` &mdash; or to a lesser extent `Worker` &mdash; may be `undefined` due to a lack of browser support ([see issue](https://github.com/Wildhoney/Freelancer/issues/2)). When a worker is unsupported you'll receive an error message, and thus it's crucial to [determine browser support](http://caniuse.com/#feat=sharedworkers) before using a particular worker.
 
 [![forthebadge](http://forthebadge.com/images/badges/built-with-love.svg)](http://forthebadge.com)
