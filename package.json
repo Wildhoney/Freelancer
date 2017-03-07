@@ -9,6 +9,7 @@
     "lint": "xo",
     "test": "npm run lint && npm run spec",
     "build": "webpack",
+    "watch": "webpack --config example/webpack.config.js --watch",
     "create": "mkdir -p example/images && webpack --config example/webpack.config.js && babel example/tools/autocrop.js | node",
     "start": "npm run create && babel example/server/default.js | node"
   },
