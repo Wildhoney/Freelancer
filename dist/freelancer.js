@@ -164,7 +164,7 @@ class Freelancer extends WorkerExtend {
 
   /**
    * @constructor
-   * @param {Array} args
+   * @param {*} args
    * @return {Worker}
    */
   constructor(...args) {
@@ -188,8 +188,8 @@ class SharedFreelancer extends SharedWorkerExtend {
 
   /**
    * @constructor
-   * @param {Array} args
-   * @return {Worker}
+   * @param {*} args
+   * @return {SharedWorker}
    */
   constructor(...args) {
     return super(createUrl(...args));
